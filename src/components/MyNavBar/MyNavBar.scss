@@ -1,3 +1,14 @@
 .MyNavBar {
   display: block;
+  background-color: yellow;
+  color: red;
+  img {
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 75%;
+  }
+  a {
+    color: red;
+    margin-left: 5px;
+  }
 }

@@ -19,8 +19,9 @@ class MyNavBar extends React.Component {
     const { authed } = this.props;
     return (
     <div className="MyNavBar">
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">SportsBall Roster App</a>
+      <nav className="navbar navbar-expand-lg">
+      <img src="https://thumbs.dreamstime.com/b/vector-image-cccp-hammer-sickle-soviet-union-symbol-38999995.jpg" alt="Hammer N Slickle"/>
+        <a className="navbar-brand" href="#">   CCCP Legends Roster</a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -30,7 +31,7 @@ class MyNavBar extends React.Component {
             <li className="nav-item active">
             {
               authed
-                ? <button className="nav-link btn btn-danger" onClick={this.logMeOut}>LogOut</button>
+                ? <button className="nav-link btn btn-outline-danger" onClick={this.logMeOut}>LogOut</button>
                 : ''
             }
             </li>
