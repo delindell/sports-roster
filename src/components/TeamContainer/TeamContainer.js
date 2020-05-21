@@ -19,7 +19,8 @@ class TeamContainer extends React.Component {
 
   render() {
     const { players } = this.state;
-    const makePlayers = players.map((player) => <Player key={player.id} player={player} />);
+    const { loadComponent } = this.props;
+    const makePlayers = players.map((player) => <Player key={player.id} player={player} loadComponent={loadComponent}/>);
     return (
       <div className="TeamContainer">
         <h1>CCCP Legends Team</h1>

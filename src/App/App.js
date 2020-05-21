@@ -35,9 +35,10 @@ class App extends React.Component {
   render() {
     const { authed } = this.state;
     const loadComponent = () => {
+      console.log('deleting is recalling this function');
       let componentToLoad = '';
       if (authed) {
-        componentToLoad = <TeamContainer />;
+        componentToLoad = <TeamContainer loadComponent={loadComponent}/>;
       } else {
         componentToLoad = <Auth />;
       }
