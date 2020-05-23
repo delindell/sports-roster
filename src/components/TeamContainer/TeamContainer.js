@@ -11,15 +11,25 @@ class TeamContainer extends React.Component {
     players: [],
   }
 
-  componentDidMount() {
+  getInfo = () => {
     playerData.getPlayersByUid(authData.getUid())
       .then((players) => this.setState({ players }))
       .catch((err) => console.error('unable to get players', err));
   }
 
+  componentDidMount() {
+    this.getInfo();
+  }
+
+  deletePlayer = (playerId) => {
+    playerData.deletePlayer(playerId)
+      .then(() => this.getInfo())
+      .catch((err) => console.error('failed to delete player', err));
+  }
+
   render() {
     const { players } = this.state;
-    const makePlayers = players.map((player) => <Player key={player.id} player={player} />);
+    const makePlayers = players.map((player) => <Player key={player.id} player={player} deletePlayer={this.deletePlayer}/>);
     return (
       <div className="TeamContainer">
         <h1>CCCP Legends Team</h1>
