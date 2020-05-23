@@ -10,12 +10,10 @@ class Player extends React.Component {
     // makePlayers: PropTypez.func.isRequired,
   }
 
-  deletePlayer = (e) => {
+  deletePlayerEvent = (e) => {
     e.preventDefault();
-    const { loadComponent } = this.props;
-    const playerId = e.target.closest('button').id;
-    playerData.deletePlayer(playerId);
-    loadComponent();
+    const { deletePlayer, player } = this.props;
+    deletePlayer(player.id);
   }
 
   render() {
@@ -28,7 +26,7 @@ class Player extends React.Component {
           <h4 className="card-title">{player.name}</h4>
           <h5>{player.position}</h5>
         </div>
-        <button id={player.id} onClick={this.deletePlayer}><i className="fas fa-user-slash"></i></button>
+        <button id={player.id} onClick={this.deletePlayerEvent}><i className="fas fa-user-slash"></i></button>
       </div>
       </div>
     );
