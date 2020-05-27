@@ -1,13 +1,10 @@
 import React from 'react';
-// import PropTypez from 'prop-types';
 import './Player.scss';
 import playerShape from '../../helpers/propz/playerShape';
-import playerData from '../../helpers/data/playerData';
 
 class Player extends React.Component {
   static propTypes = {
     player: playerShape.playerShape,
-    // makePlayers: PropTypez.func.isRequired,
   }
 
   deletePlayerEvent = (e) => {
