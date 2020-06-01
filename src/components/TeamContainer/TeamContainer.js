@@ -57,6 +57,11 @@ class TeamContainer extends React.Component {
     this.setState({ formOpen: true, editPlayer: player });
   }
 
+  formClose = (e) => {
+    e.preventDefault();
+    this.setState({ formOpen: false });
+  }
+
   render() {
     const { players, formOpen, editPlayer } = this.state;
     const makePlayers = players.map((player) => <Player key={player.id} player={player} deletePlayer={this.deletePlayer} editAPlayer={this.editAPlayer}/>);
@@ -64,7 +69,7 @@ class TeamContainer extends React.Component {
       <div className="TeamContainer">
         <h1>CCCP Legends Team</h1>
         <button className="btn btn-outline-warning mb-3" onClick={() => this.setState({ formOpen: true })}>Add Another Legend to this Team</button>
-        { formOpen ? <NewPlayerForm saveNewPlayer={this.saveNewPlayer} player={editPlayer} putPlayer={this.putPlayer} /> : '' }
+        { formOpen ? <NewPlayerForm saveNewPlayer={this.saveNewPlayer} player={editPlayer} putPlayer={this.putPlayer} formClose={this.formClose}/> : '' }
         <div className="d-flex flex-wrap">
           {makePlayers}
         </div>

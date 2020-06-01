@@ -9,6 +9,7 @@ class NewPlayerForm extends React.Component {
     player: playerShape.playerShape,
     saveNewPlayer: PropTypes.func.isRequired,
     putPlayer: PropTypes.func.isRequired,
+    formClose: PropTypes.func.isRequired,
   }
 
   state = {
@@ -77,9 +78,11 @@ class NewPlayerForm extends React.Component {
       playerImage,
       isEditing,
     } = this.state;
+    const { formClose } = this.props;
 
     return (
       <div className="NewPlayerForm">
+      <button className="btn btn-outline-warning mb-3" onClick={formClose}>X</button>
       <form className="col-6 offset-3">
           <div className="form-group">
             <label htmlFor="player-name">Name</label>
