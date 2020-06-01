@@ -1,6 +1,6 @@
 import PropTypez from 'prop-types';
 
-const playerShape = ({
+const playerShape = PropTypez.shape({
   imageUrl: PropTypez.string.isRequired,
   name: PropTypez.string.isRequired,
   position: PropTypez.string.isRequired,
