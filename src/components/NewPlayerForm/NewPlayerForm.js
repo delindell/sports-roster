@@ -116,8 +116,8 @@ class NewPlayerForm extends React.Component {
           </div>
           {
             isEditing
-              ? <button className="btn btn-success" onClick={this.updatePlayer}>Update This Player</button>
-              : <button className="btn btn-success" onClick={this.savePlayer}>Save This Player</button>
+              ? <button className="btn btn-outline-warning mb-3" onClick={this.updatePlayer}>Update This Player</button>
+              : <button className="btn btn-outline-warning mb-3" onClick={this.savePlayer}>Save This Player</button>
           }
         </form>
     </div>
