@@ -12,19 +12,19 @@ Overall pretty cool app...
 
 ### View of page without authorized user
 
-[Auth](https://i.imgur.com/YyiR6yN.png)
+![Auth](https://i.imgur.com/YyiR6yN.png)
 
 ### Logged in view of players
 
-[Players](https://i.imgur.com/ozONCEI.png)
+![Players](https://i.imgur.com/ozONCEI.png)
 
 ### New player form
 
-[New player form](https://i.imgur.com/mVTqb5U.png)
+![New player form](https://i.imgur.com/mVTqb5U.png)
 
 ### Update player form 
 
-[Update player form](https://i.imgur.com/FrvWXR7.png)
+![Update player form](https://i.imgur.com/FrvWXR7.png)
 
 ## How to run
 
