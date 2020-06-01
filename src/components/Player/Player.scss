@@ -7,5 +7,15 @@
     background-color: yellow;
     color: red;
     margin-bottom: 10px;
+    padding: 5px;
+    .btn {
+      background-color: red;
+      color: yellow;
+      margin: 5px;
+    }
+    .btn:hover {
+      text-decoration: underline;
+      opacity: .7;
+    }
   }
 }
