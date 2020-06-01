@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sports Roster Project
 
-## Available Scripts
+## Description 
 
-In the project directory, you can run:
+The following application is the sports roster for a team, an authorized user can thereby do all of the normal CRUD functionality we had learned earlier in the class. This task was completed by using Firebase for webhosting of the database for the players on the team, along with the React framework to construct the application itself.
 
-### `yarn start`
+This project expanded upon all the previous knowledge of React components, JSX etc., but really reenforced the use of state and props on different levels of the application. We also learned the value of prop-types in error checking. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Overall pretty cool app...
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Screenshots 
 
-### `yarn test`
+### View of page without authorized user
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Auth](https://i.imgur.com/YyiR6yN.png)
 
-### `yarn build`
+### Logged in view of players
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Players](https://i.imgur.com/ozONCEI.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### New player form
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[New player form](https://i.imgur.com/mVTqb5U.png)
 
-### `yarn eject`
+### Update player form 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+[Update player form](https://i.imgur.com/FrvWXR7.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## How to run
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Clone down this repo
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Navigate to the folder containing the cloned repo
 
-## Learn More
+1. In your command line run `npm start`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+1. In your browser go to `http://localhost:8080`

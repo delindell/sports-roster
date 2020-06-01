@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './TeamContainer.scss';
-// import PropTypez from 'prop-types';
+import PropTypez from 'prop-types';
 
 import playerData from '../../helpers/data/playerData';
 import authData from '../../helpers/data/authData';
@@ -9,9 +9,9 @@ import Player from '../Player/Player';
 import NewPlayerForm from '../NewPlayerForm/NewPlayerForm';
 
 class TeamContainer extends React.Component {
-  // static propTypes = {
-  //   loadComponent: PropTypez.func.isRequired,
-  // }
+  static propTypes = {
+    loadComponent: PropTypez.func.isRequired,
+  }
 
   state = {
     players: [],
