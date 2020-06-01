@@ -2,16 +2,32 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './NewPlayerForm.scss';
 import authData from '../../helpers/data/authData';
+import playerShape from '../../helpers/propz/playerShape';
 
 class NewPlayerForm extends React.Component {
   static propTypes = {
+    player: playerShape.playerShape,
     saveNewPlayer: PropTypes.func.isRequired,
+    putPlayer: PropTypes.func.isRequired,
   }
 
   state = {
     playerName: '',
     playerPosition: '',
     playerImage: '',
+    isEditing: false,
+  }
+
+  componentDidMount() {
+    const { player } = this.props;
+    if (player.name) {
+      this.setState({
+        playerName: player.name,
+        playerPosition: player.position,
+        playerImage: player.imageUrl,
+        isEditing: true,
+      });
+    }
   }
 
   savePlayer = (e) => {
@@ -41,8 +57,27 @@ class NewPlayerForm extends React.Component {
     this.setState({ playerImage: e.target.value });
   }
 
-  render() {
+  updatePlayer = (e) => {
+    e.preventDefault();
+    const { player, putPlayer } = this.props;
     const { playerName, playerPosition, playerImage } = this.state;
+    const updatedPlayer = {
+      imageUrl: playerImage,
+      name: playerName,
+      position: playerPosition,
+      uid: authData.getUid(),
+    };
+    putPlayer(player.id, updatedPlayer);
+  }
+
+  render() {
+    const {
+      playerName,
+      playerPosition,
+      playerImage,
+      isEditing,
+    } = this.state;
+
     return (
       <div className="NewPlayerForm">
       <form className="col-6 offset-3">
@@ -65,7 +100,8 @@ class NewPlayerForm extends React.Component {
             id="player-description"
             placeholder="What Attrocites did this Dude Commit?"
             value={playerPosition}
-            onChange={this.positionChange} />
+            onChange={this.positionChange}
+            />
           </div>
           <div className="form-group">
             <label htmlFor="player-image">Image</label>
@@ -75,9 +111,14 @@ class NewPlayerForm extends React.Component {
             id="player-image"
             placeholder="Find an Incredible Photo to post here"
             value={playerImage}
-            onChange={this.imageChange} />
+            onChange={this.imageChange}
+            />
           </div>
-          <button className="btn btn-success" onClick={this.savePlayer}>Save Dis Board</button>
+          {
+            isEditing
+              ? <button className="btn btn-success" onClick={this.updatePlayer}>Update This Player</button>
+              : <button className="btn btn-success" onClick={this.savePlayer}>Save This Player</button>
+          }
         </form>
     </div>
     );
